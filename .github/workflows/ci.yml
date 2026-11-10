@@ -5,16 +5,19 @@ on:
       - master
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   run-ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
         with:
           submodules: recursive
 
       - name: Install Foundry
-        uses: onbjerg/foundry-toolchain@v1
+        uses: onbjerg/foundry-toolchain@dba66c27052e63476d886f22216e119ba7e615bf # v1
         with:
           version: nightly
 
